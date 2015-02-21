@@ -1,4 +1,4 @@
-## The next functions make a cache of the inverse of a matrix
+## The next functions makes a cache of the inverse of a matrix
 
 # The Function makeCacheMatrix creates a list, but first, that is what it do:
 # - set the value of the matrix
@@ -24,12 +24,12 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
     inv <- x$getinverse()
-    if(!is.null(inv)) {
+    if(!is.null(MatrixInverse)) {
         message("getting cached data.")
-        return(inv)
+        return(MatrixInverse)
     }
     data <- x$get()
-    inv <- solve(data)
-    x$setinverse(inv)
-    inv
+    MatrixInverse <- solve(data)
+    x$setinverse(MatrixInverse)
+    MatrixInverse
 }
